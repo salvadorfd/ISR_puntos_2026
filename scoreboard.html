@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Puntos Mate y FQ</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='0.9em' font-size='56'%3E%F0%9F%93%9A%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="scoreboard.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section id="welcomeView" class="welcome-view">
+        <div class="welcome-card">
+          <p class="eyebrow">Como viene tu equipo?</p>
+          <h1>Tabla de Puntos</h1>
+          <p class="welcome-text">
+            Ejercicios de <strong>Matemática</strong> y
+            <strong>FisicoQuímica</strong>
+          </p>
+          <button id="enterBtn" class="btn btn-primary">Entrar</button>
+        </div>
+      </section>
+
+      <section id="scoreboardView" class="scoreboard-view hidden">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Live ranking</p>
+            <h2>Tabla de Puntos</h2>
+          </div>
+          <div class="topbar-actions">
+            <label for="sheetSelect">Curso</label>
+            <select id="sheetSelect">
+              <option value="3roSoc">3roSoc</option>
+              <option value="3roNat">3roNat</option>
+              <option value="3roEco">3roEco</option>
+            </select>
+          </div>
+        </header>
+
+        <section class="meta-row">
+          <span id="statusBadge" class="badge">Sin cargar</span>
+          <span id="updatedAt" class="muted"></span>
+          <span id="summaryText" class="muted"></span>
+        </section>
+
+        <section class="board-card">
+          <div class="board-head">
+            <h3 id="boardTitle">Puntos</h3>
+            <button id="membersBtn" class="members-btn" type="button">
+              Ver Integrantes
+            </button>
+          </div>
+          <div id="scoreboardList" class="scoreboard-list"></div>
+          <p id="emptyState" class="muted hidden">
+            No hay datos disponibles para esta hoja.
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <div id="membersOverlay" class="members-overlay" aria-hidden="true"></div>
+    <aside
+      id="membersPanel"
+      class="members-panel"
+      aria-hidden="true"
+      aria-label="Integrantes por equipo"
+    >
+      <header class="members-panel-head">
+        <h4>Ver Integrantes</h4>
+        <button id="closeMembersBtn" class="members-close" type="button" aria-label="Cerrar panel">
+          ×
+        </button>
+      </header>
+      <p class="members-panel-note muted">
+        Integrantes por equipo.
+      </p>
+      <div id="membersPanelContent" class="members-panel-content"></div>
+    </aside>
+
+    <script src="scoreboard.js"></script>
+  </body>
+</html>

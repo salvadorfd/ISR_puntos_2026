@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Visualizador Google Sheets</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Datos en vivo</p>
+          <h1>Visualizador Google Sheets</h1>
+          <p class="lead">
+            Carga datos desde una hoja publicada en Google Sheets y los
+            representa en una tabla y un gráfico.
+          </p>
+        </div>
+        <button id="refreshBtn" class="primary">Recargar datos</button>
+      </header>
+
+      <section class="card">
+        <div class="row">
+          <div>
+            <h2>Fuente</h2>
+            <p class="muted" id="sourceUrl"></p>
+            <p class="muted" id="sheetHint"></p>
+          </div>
+          <div class="controls">
+            <label for="sheetSelect" class="muted">Hoja</label>
+            <select id="sheetSelect"></select>
+          </div>
+          <div class="status">
+            <span id="statusBadge" class="badge">Sin cargar</span>
+            <span id="updatedAt" class="muted"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card">
+          <div class="row">
+            <h2>Gráfico</h2>
+            <div class="controls">
+              <label for="metricSelect" class="muted">Métrica</label>
+              <select id="metricSelect"></select>
+            </div>
+          </div>
+          <div class="chart-wrap">
+            <canvas id="chartCanvas" width="800" height="380"></canvas>
+          </div>
+          <p class="muted" id="chartHint">Selecciona una métrica numérica.</p>
+        </div>
+
+        <div class="card">
+          <div class="row">
+            <h2>Tabla</h2>
+            <span class="muted" id="rowCount"></span>
+          </div>
+          <div class="table-wrap">
+            <table id="dataTable"></table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
